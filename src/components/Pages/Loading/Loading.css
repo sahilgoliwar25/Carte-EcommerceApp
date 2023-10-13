@@ -1,0 +1,41 @@
+.loadingArea {
+  height: 50vh;
+  position: relative;
+}
+.loadingBack {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #f08080;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.loadingBack::after,
+.loadingBack:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #f08080;
+  opacity: 0.7;
+}
+.loadingBack:before {
+  animation: notification 2s ease-out infinite;
+}
+.loadingBack:after {
+  animation: notification 2s 1s ease-out infinite;
+}
+@keyframes notification {
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}

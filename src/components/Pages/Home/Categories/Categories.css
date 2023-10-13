@@ -1,0 +1,39 @@
+.categoriesContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 15px 0;
+  text-align: center;
+}
+.itembox {
+  font-weight: 700;
+  /* padding: 20px; */
+  border-radius: 10px;
+  /* border: 1px solid #00000031; */
+  /* box-shadow: 0px 3px 6px #0000006e; */
+}
+.itemImg {
+  height: 100px;
+  width: 100px;
+  margin: 5px 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.image {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: auto;
+  opacity: 1;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.productLink {
+  text-decoration: none;
+  color: black;
+}

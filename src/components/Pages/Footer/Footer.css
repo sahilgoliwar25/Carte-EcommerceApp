@@ -1,0 +1,165 @@
+.footer-comp {
+  background-color: rgb(29, 29, 29);
+  width: 100%;
+  color: white;
+  height: auto;
+  position: relative;
+  /* align-items: center; */
+  padding: 20px 0;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+a {
+  text-decoration: none;
+}
+.company-logo-comp {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+.company-logo-comp > a > img {
+  width: 80px;
+  height: 80px;
+}
+.company-info-comp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-nav-logo {
+  position: relative;
+
+  font-size: 50px;
+
+  font-family: "Montserrat", sans-serif;
+}
+.footer-logo2 {
+  font-weight: 700;
+  color: white;
+}
+.footer-logo-rot {
+  position: absolute;
+  left: -20px;
+  font-size: 25px;
+  rotate: -90deg;
+  line-height: 60px;
+  color: white;
+}
+.company-desc {
+  text-overflow: ellipsis;
+  /* font-size: 14px; */
+  text-align: justify;
+  line-height: 30px;
+  max-height: 100px;
+  max-width: 350px;
+}
+.company-social {
+  display: flex;
+  gap: 20px;
+}
+.company-social > svg {
+  width: 30px;
+  height: 30px;
+}
+.footer-service-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.footer-service-nav > a {
+  color: white;
+}
+.footer-company-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.footer-company-info svg {
+  width: 20px;
+  height: 20px;
+}
+.footer-company-align {
+  display: flex;
+  gap: 10px;
+}
+.footer-company-info > h1 {
+  margin: 18px 0;
+}
+
+.css-button-arrow--black {
+  width: 250px;
+  height: 50px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  overflow: hidden;
+  border-radius: 5px;
+  border: none;
+  background-color: #ffffff;
+  font-family: inherit;
+  color: rgb(29, 29, 29);
+  font-size: 20px;
+}
+.css-button-arrow--black:hover {
+  border-radius: 5px;
+  padding-right: 24px;
+  padding-left: 8px;
+}
+.css-button-arrow--black:hover:after {
+  opacity: 1;
+  right: 10px;
+}
+.css-button-arrow--black:after {
+  content: "\00BB";
+  position: absolute;
+  opacity: 0;
+  font-size: 20px;
+  line-height: 50px;
+  top: 0;
+  right: -20px;
+  transition: 0.4s;
+}
+.footer-actions-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* -------------Media Query for Mobiles--------------- */
+@media only screen and (min-device-width: 270px) and (max-device-width: 1200px) {
+  .company-logo-comp > a > img {
+    width: 60px;
+    height: 60px;
+  }
+  .footer-nav-logo {
+    display: none;
+  }
+  .footer-comp {
+    grid-template-columns: auto;
+  }
+  .company-social > svg {
+    width: 25px;
+    height: 25px;
+  }
+  .footer-company-info > h1 {
+    font-size: 1.5em;
+  }
+}
+@media only screen and (min-device-width: 270px) and (max-device-width: 500px) {
+  .footer-actions-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-company-info {
+    align-items: center;
+  }
+  .company-desc {
+    line-height: 24px;
+  }
+}

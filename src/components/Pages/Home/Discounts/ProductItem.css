@@ -1,0 +1,40 @@
+.product-item {
+  width: 250px; /* Set desired fixed width */
+  height: 250px;
+  padding: 10px;
+  text-align: center;
+  user-select: none;
+  border: 1px solid #45454531;
+  border-radius: 10px;
+}
+.product-image {
+  height: 80%;
+  position: relative;
+}
+.product-image img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: auto;
+  opacity: 1;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.product-details {
+  margin-top: 10px;
+}
+
+.product-name {
+  font-weight: bold;
+}
+
+.product-price {
+  font-size: 1.2em;
+}
+
+.product-rating {
+  color: #777;
+}
