@@ -21,15 +21,21 @@ const Products = () => {
         <div className="productContainer">
           <div className="Title">{routeData}</div>
           <div>
-            <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+            <div>
               {apiData &&
                 apiData.map((item, index) => {
+                  // console.log(item);
                   return (
                     <div key={index}>
                       <ProdItem
                         id={item.id}
-                        title={item.heading}
+                        heading={item.heading}
                         image={item.image}
+                        ratings={item.ratings}
+                        highlights={item.highlights}
+                        percent={item.percent}
+                        price={item.price}
+                        discount={item.discount}
                       />
                     </div>
                   );

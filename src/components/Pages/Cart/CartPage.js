@@ -20,7 +20,7 @@ const CartPage = () => {
                   height={150}
                   width={150}
                 />
-                <h3>{item.title}</h3>
+                <h3>{item.heading}</h3>
                 <button onClick={() => dispatch(RemoveItem({ id: item.id }))}>
                   Remove from Cart
                 </button>

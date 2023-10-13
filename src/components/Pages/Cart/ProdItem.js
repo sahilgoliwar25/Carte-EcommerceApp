@@ -1,47 +1,72 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { AddtoCart } from "../../ReduxCart/CartSlice";
-import { Link } from "react-router-dom";
+import { AiFillStar } from "react-icons/ai";
 
-const ProdItem = ({ id, title, image, cat }) => {
-  const dispatch = useDispatch();
+import { Link } from "react-router-dom";
+import "./ProdItem.css";
+
+const ProdItem = ({
+  id,
+  heading,
+  image,
+  cat,
+  ratings,
+  highlights,
+  percent,
+  price,
+  discount,
+}) => {
   return (
     <>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
+      <div className="prodContItem">
         <Link to={`/${cat}/${id}`}>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <img src={image} alt="Product Img" height={150} width={150} />
-            <h3 style={{ textAlign: "center" }}>{title}</h3>
+          <div className="prodContItemData">
+            <div className="prodContItemInfo">
+              <div className="prodContItemImage">
+                <img src={image} alt="Product Img" />
+              </div>
+              <div className="prodContItemInfoDetails">
+                <h3 className="prodContItemHeading">{heading}</h3>
+                {ratings ? (
+                  <div className="dyProductRatingsCont">
+                    <div className="prodContRating">
+                      {ratings} <AiFillStar />
+                    </div>
+                    Ratings
+                  </div>
+                ) : (
+                  <div style={{ color: "blue", fontSize: "0.9rem" }}>
+                    Be the first one to rate this product
+                  </div>
+                )}
+                <div className="prodContItemHighlightsCont">
+                  <ul>
+                    {highlights &&
+                      highlights.map((subitems, index) => {
+                        return <li key={index}>{subitems}</li>;
+                      })}
+                  </ul>
+                </div>
+              </div>
+            </div>
+            {discount ? (
+              <div>
+                <div className="prodContItemPrice">
+                  <div className="dyProductDiscount">₹{discount}</div>
+                  <div className="dyProductOriPrice">₹{price}</div>
+                  <div>
+                    <div className="dyProductOriDiscountPer">
+                      {percent}% off
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="dyProductDiscount">₹{price}</div>
+            )}
           </div>
         </Link>
-        <button
-          onClick={() =>
-            dispatch(
-              AddtoCart({
-                id,
-                image,
-                title,
-              })
-            )
-          }
-        >
-          Add to Cart
-        </button>
       </div>
+      <hr className="prodSeperator" />
     </>
   );
 };
