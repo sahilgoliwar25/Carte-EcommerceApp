@@ -16,7 +16,7 @@ const CartPage = () => {
               <div key={index}>
                 <img
                   src={item.image}
-                  alt="Image not found"
+                  alt="Img not found"
                   height={150}
                   width={150}
                 />
