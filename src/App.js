@@ -17,7 +17,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <ScrollToTop />
-        <Navbar />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />

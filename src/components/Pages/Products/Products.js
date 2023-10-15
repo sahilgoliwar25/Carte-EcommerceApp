@@ -4,19 +4,23 @@ import "./Products.css";
 import ProdItem from "../Cart/ProdItem";
 import axios from "axios";
 import Loading from "../Loading/Loading";
+import Navbar from "../Navbar/Navbar";
 
 const Products = () => {
   const routeData = useParams().product;
   // console.log(routeData);
   const [apiData, setApiData] = useState();
   useEffect(() => {
-    axios(`http://localhost:5000/api/products/${routeData}`).then((data) => {
+    axios(
+      `https://sg-carte-ecommerce-server.onrender.com/api/products/${routeData}`
+    ).then((data) => {
       setApiData(data.data);
     });
   }, [routeData]);
 
   return (
     <>
+      <Navbar />
       {apiData ? (
         <div className="productContainer">
           <div className="Title">{routeData}</div>
@@ -28,7 +32,7 @@ const Products = () => {
                   return (
                     <div key={index}>
                       <ProdItem
-                        id={item.id}
+                        id={item._id}
                         heading={item.heading}
                         image={item.image}
                         ratings={item.ratings}

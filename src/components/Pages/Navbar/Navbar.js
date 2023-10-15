@@ -1,48 +1,90 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
 import { LuShoppingCart } from "react-icons/lu";
 import { useSelector } from "react-redux";
 function Navbar() {
   const data = useSelector((state) => state.Cart.cart);
-  // console.log(data);
+
+  const logoutbtn = () => {
+    localStorage.removeItem("token");
+    window.location.reload(false);
+  };
+
+  // useEffect(() => {
+  //   console.log(localStorage.getItem("token"));
+  // }, [localStorage.getItem("token")]);
   return (
     <div className="NavbarContainer">
       <div className="navbarContainerMain">
-        <h2>Carte</h2>
+        <div className="brandLogo">
+          <span className="LogoLetter1">C</span>
+          <span className="LogoLetter2">A</span>
+          <span className="LogoLetter3">R</span>
+          <span className="LogoLetter4">T</span>
+          <span className="LogoLetter5">E</span>
+        </div>
         <input
           className="searchInput"
           type="text"
           placeholder="Search for Products, Brands or More"
         />
-        <Link className="navbarLink" to="/cart">
-          <div className="cartIcon">
-            <LuShoppingCart /> <div className="cartCount">{data.length}</div>
-          </div>
-        </Link>
-        <Link className="navbarLink" to="/login">
-          <h3>Login</h3>
-        </Link>
+        <div className="userActions">
+          <Link className="navbarLink" to="/cart">
+            <div className="cartIcon">
+              <LuShoppingCart /> <div className="cartCount">{data.length}</div>
+            </div>
+          </Link>
+          {localStorage.getItem("token") ? (
+            <button className="btnlogout" onClick={logoutbtn}>
+              Logout
+            </button>
+          ) : (
+            <Link className="navbarLink" to="/login">
+              <button className="btnlogout">Login</button>
+            </Link>
+          )}
+        </div>
       </div>
       <div className="navbarRoutes">
-        <Link className="navbarLink" to="/">
+        <NavLink activeclassname="activeNavLink" className="navbarLink" to="/">
           Home
-        </Link>
-        <Link className="navbarLink" to="/Phones">
+        </NavLink>
+        <NavLink
+          activeclassname="activeNavLink"
+          className="navbarLink"
+          to="/Phones"
+        >
           Phones
-        </Link>
-        <Link className="navbarLink" to="/Tablets">
+        </NavLink>
+        <NavLink
+          activeclassname="activeNavLink"
+          className="navbarLink"
+          to="/Tablets"
+        >
           Tablets
-        </Link>
-        <Link className="navbarLink" to="/Laptops">
+        </NavLink>
+        <NavLink
+          activeclassname="activeNavLink"
+          className="navbarLink"
+          to="/Laptops"
+        >
           Laptops
-        </Link>
-        <Link className="navbarLink" to="/Cameras">
+        </NavLink>
+        <NavLink
+          activeclassname="activeNavLink"
+          className="navbarLink"
+          to="/Cameras"
+        >
           Cameras
-        </Link>
-        <Link className="navbarLink" to="/Accessories">
+        </NavLink>
+        <NavLink
+          activeclassname="active"
+          className="navbarLink"
+          to="/Accessories"
+        >
           Accessories
-        </Link>
+        </NavLink>
       </div>
     </div>
   );

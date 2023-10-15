@@ -1,15 +1,16 @@
 body {
   font-family: "Montserrat", sans-serif;
+  background-color: #fcfcfc;
 }
 a {
   text-decoration: none;
-  color: black;
+  color: #242021;
 }
 
 .btnAddCart {
   align-items: center;
   background-color: initial;
-  background-image: linear-gradient(#464d55, #25292e);
+  background-image: linear-gradient(#9c385d, #602c3f);
   border-radius: 8px;
   border-width: 0;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.05);
@@ -63,7 +64,7 @@ a {
 .btnBuyNow {
   align-items: center;
   background-color: initial;
-  background-image: linear-gradient(#464d55, #25292e);
+  background-image: linear-gradient(#d8457c, #9c385d);
   border-radius: 8px;
   border-width: 0;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.05);
@@ -111,4 +112,21 @@ a {
   .btnBuyNow {
     height: 48px;
   }
+}
+
+/* Logo */
+.LogoLetter1 {
+  color: #602c3f;
+}
+.LogoLetter2 {
+  color: #823c55;
+}
+.LogoLetter3 {
+  color: #9c385d;
+}
+.LogoLetter4 {
+  color: #be3c6c;
+}
+.LogoLetter5 {
+  color: #d8457c;
 }

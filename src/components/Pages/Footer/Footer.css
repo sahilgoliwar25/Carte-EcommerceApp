@@ -1,7 +1,7 @@
 .footer-comp {
-  background-color: rgb(29, 29, 29);
+  background-color: #242021;
   width: 100%;
-  color: white;
+  color: #fcfcfc;
   height: auto;
   position: relative;
   /* align-items: center; */
@@ -29,11 +29,9 @@ a {
 }
 
 .footer-nav-logo {
-  position: relative;
-
   font-size: 50px;
-
-  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-family: inherit;
 }
 .footer-logo2 {
   font-weight: 700;

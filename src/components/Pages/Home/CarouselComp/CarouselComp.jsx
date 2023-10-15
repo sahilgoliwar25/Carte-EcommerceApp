@@ -41,7 +41,7 @@ const CarouselComp = () => {
         {images.map((_, index) => (
           <div
             key={index}
-            className={`dot ${index === currentImage ? "active" : ""}`}
+            className={`dot ${index === currentImage ? "activedot" : ""}`}
             onClick={() => handleDotClick(index)}
           ></div>
         ))}

@@ -7,30 +7,36 @@ import QuoteBanner from "./QuoteBanner/QuoteBanner";
 import axios from "axios";
 import TodaySpecial from "./TodaysSpecial/TodaySpecial";
 import Loading from "../Loading/Loading";
+import Navbar from "../Navbar/Navbar";
 
 function Home() {
   const [apiData, setApiData] = useState();
   useEffect(() => {
-    axios("http://localhost:5000/api/products").then((data) => {
-      // console.log(data.data);
-      setApiData(data.data);
-    });
+    axios("https://sg-carte-ecommerce-server.onrender.com/api/products").then(
+      (data) => {
+        // console.log(data.data);
+        setApiData(data.data);
+      }
+    );
   }, []);
 
   return (
-    <div className="homeContainer">
-      {apiData ? (
-        <>
-          <CarouselComp />
-          <Categories />
-          <ProductList products={apiData} />
-          <TodaySpecial products={apiData} />
-          <QuoteBanner />
-        </>
-      ) : (
-        <Loading />
-      )}
-    </div>
+    <>
+      <Navbar />
+      <div className="homeContainer">
+        {apiData ? (
+          <>
+            <CarouselComp />
+            <Categories />
+            <ProductList products={apiData} />
+            <TodaySpecial products={apiData} />
+            <QuoteBanner />
+          </>
+        ) : (
+          <Loading />
+        )}
+      </div>
+    </>
   );
 }
 

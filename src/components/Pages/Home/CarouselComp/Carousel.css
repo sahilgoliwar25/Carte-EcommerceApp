@@ -35,6 +35,6 @@
   cursor: pointer;
 }
 
-.dot.active {
+.dot.activedot {
   background-color: #333;
 }

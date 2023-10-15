@@ -1,11 +1,12 @@
 import axios from "axios";
 import React, { useEffect } from "react";
+import Navbar from "../Navbar/Navbar";
 
 function Dashboard() {
   const token = localStorage.getItem("token");
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/dashboard`, {
+      .get(`https://sg-carte-ecommerce-server.onrender.com/api/dashboard`, {
         headers: { Authorization: token },
       })
       .then((res) => {
@@ -16,9 +17,12 @@ function Dashboard() {
       });
   });
   return (
-    <div>
-      <h1>This is Dashboard</h1>
-    </div>
+    <>
+      <Navbar />
+      <div>
+        <h1>This is Dashboard</h1>
+      </div>
+    </>
   );
 }
 

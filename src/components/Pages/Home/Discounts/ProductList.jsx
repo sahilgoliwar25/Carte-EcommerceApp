@@ -18,6 +18,7 @@ const ProductList = ({ products }) => {
 
     setScrollPosition(list.scrollLeft);
   };
+  // console.log(products);
 
   return (
     <>

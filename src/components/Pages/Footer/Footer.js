@@ -18,7 +18,11 @@ function Footer() {
         <div className="company-logo-comp">
           <div className="footer-nav-logo">
             <Link to="/">
-              <span className="footer-logo2">Carte</span>
+              <span className="LogoLetter1">C</span>
+              <span className="LogoLetter2">A</span>
+              <span className="LogoLetter3">R</span>
+              <span className="LogoLetter4">T</span>
+              <span className="LogoLetter5">E</span>
             </Link>
           </div>
         </div>

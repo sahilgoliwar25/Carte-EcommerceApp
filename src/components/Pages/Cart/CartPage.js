@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RemoveItem } from "../../ReduxCart/CartSlice";
+import Navbar from "../Navbar/Navbar";
 
 const CartPage = () => {
   const dispatch = useDispatch();
@@ -8,6 +9,7 @@ const CartPage = () => {
   // console.log(data);
   return (
     <>
+      <Navbar />
       <div className="Title">Cart</div>
       <div>
         {data &&

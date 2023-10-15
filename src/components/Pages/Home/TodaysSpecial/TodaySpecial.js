@@ -13,7 +13,7 @@ const TodaySpecial = ({ products }) => {
             products.slice(0, 6).map((item, index) => {
               return (
                 <div className="items" key={index}>
-                  <Link to={`/${item.cat}/${item.id}`}>
+                  <Link to={`/${item.cat}/${item._id}`}>
                     <div className="imgCont">
                       <img
                         className="image"
