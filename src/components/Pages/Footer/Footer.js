@@ -42,8 +42,7 @@ function Footer() {
           <h2>Services</h2>
           <div className="footer-service-nav">
             <Link to="/">Home</Link>
-            <Link to="/">Products</Link>
-            <Link to="/">Cart</Link>
+            <Link to="/cart">Cart</Link>
             <Link to="/signup">Signup</Link>
             <Link to="/login">Login</Link>
             {/* <Link to="/">Food</Link> */}
