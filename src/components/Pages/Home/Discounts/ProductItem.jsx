@@ -1,8 +1,17 @@
 import React from "react";
 import "./ProductItem.css"; // Create a CSS file for styling
 import { Link } from "react-router-dom";
+import { AiFillStar } from "react-icons/ai";
 
-const ProductItem = ({ _id, image, heading, price, ratings, cat }) => {
+const ProductItem = ({
+  _id,
+  image,
+  heading,
+  price,
+  ratings,
+  cat,
+  discount,
+}) => {
   // console.log(_id);
   return (
     <div className="product-item">
@@ -11,9 +20,14 @@ const ProductItem = ({ _id, image, heading, price, ratings, cat }) => {
           <img src={image} alt={cat} />
         </div>
         <div className="product-details">
-          <div className="product-name">{cat}</div>
-          <div className="product-price">₹{price}</div>
-          <div className="product-rating">Rating: {ratings}</div>
+          <div className="product-name">{heading}</div>
+          <div className="productPriceCont">
+            <div className="product-discount">₹{discount}</div>
+            <div className="product-price">₹{price}</div>
+            <div className="product-rating">
+              {ratings} <AiFillStar />
+            </div>
+          </div>
         </div>
       </Link>
     </div>

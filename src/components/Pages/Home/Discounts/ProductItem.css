@@ -28,13 +28,41 @@
 }
 
 .product-name {
-  font-weight: bold;
+  margin: 5px 0;
+  font-weight: 500;
+  font-size: 1.2rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 30px;
+  max-height: 100px;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.productPriceCont {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: flex-end;
+}
+.product-discount {
+  font-weight: 700;
+  font-size: 1.2rem;
 }
 
 .product-price {
-  font-size: 1.2em;
+  font-size: 0.8rem;
+  text-decoration: line-through;
 }
 
 .product-rating {
-  color: #777;
+  width: max-content;
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  background-color: #11a411;
+  color: white;
+  padding: 3px;
+  border-radius: 8px;
+  font-size: 0.8rem;
 }

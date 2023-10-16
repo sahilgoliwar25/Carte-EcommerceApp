@@ -30,7 +30,7 @@ function Navbar() {
           placeholder="Search for Products, Brands or More"
         />
         <div className="userActions">
-          <Link className="navbarLink" to="/cart">
+          <Link className="" to="/cart">
             <div className="cartIcon">
               <LuShoppingCart /> <div className="cartCount">{data.length}</div>
             </div>
@@ -40,7 +40,7 @@ function Navbar() {
               Logout
             </button>
           ) : (
-            <Link className="navbarLink" to="/login">
+            <Link className="" to="/login">
               <button className="btnlogout">Login</button>
             </Link>
           )}
