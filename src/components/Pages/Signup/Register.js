@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Form.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Navbar from "../Navbar/Navbar";
 
 function Register() {
+  const navi = useNavigate();
   const [inputs, setInputs] = useState({
     name: "",
     contact: "",
@@ -34,6 +37,21 @@ function Register() {
         console.log(err);
       });
   };
+  useEffect(() => {
+    if (serverRes) {
+      localStorage.setItem("token", serverRes.token);
+      if (serverRes.msg === "User is registered successfully") {
+        toast.success(serverRes.msg, {
+          autoClose: 2000,
+        });
+        setTimeout(() => {
+          navi("/login");
+        }, 3000);
+      } else {
+        toast.error(serverRes.msg);
+      }
+    }
+  }, [serverRes, navi]);
   return (
     <>
       <Navbar />
@@ -89,9 +107,10 @@ function Register() {
             <button className="btn-submit" onClick={submitHandle}>
               Register
             </button>
-            {serverRes === undefined ? "" : <div>{serverRes.msg}</div>}
+            {/* {serverRes === undefined ? "" : <div>{serverRes.msg}</div>} */}
           </form>
         </div>
+        <ToastContainer />
       </div>
     </>
   );

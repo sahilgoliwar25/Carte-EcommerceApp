@@ -4,11 +4,16 @@ import "./Navbar.css";
 import { LuShoppingCart } from "react-icons/lu";
 import { useSelector } from "react-redux";
 import { FaChevronDown } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+
 function Navbar() {
   const data = useSelector((state) => state.Cart.cart);
 
   const logoutbtn = () => {
     localStorage.removeItem("token");
+    toast.success("Logged Out Successfully", {
+      autoClose: 2000,
+    });
     window.location.reload(false);
   };
 
@@ -17,6 +22,8 @@ function Navbar() {
   // }, [localStorage.getItem("token")]);
   return (
     <div className="NavbarContainer">
+      <ToastContainer />
+
       <div className="navbarContainerMain">
         <div className="brandLogo">
           <span className="LogoLetter1">C</span>
