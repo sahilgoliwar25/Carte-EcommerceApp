@@ -1,6 +1,6 @@
 .product-item {
-  width: 280px; /* Set desired fixed width */
-  height: 320px;
+  width: 250px; /* Set desired fixed width */
+  height: 280px;
   padding: 10px;
   text-align: center;
   user-select: none;
@@ -8,7 +8,7 @@
   border-radius: 10px;
 }
 .product-image {
-  height: 80%;
+  height: 70%;
   position: relative;
 }
 .product-image img {
@@ -30,7 +30,7 @@
 .product-name {
   margin: 5px 0;
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: 1rem;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;

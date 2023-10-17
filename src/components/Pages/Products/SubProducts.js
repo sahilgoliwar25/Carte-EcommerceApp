@@ -6,24 +6,28 @@ import axios from "axios";
 import Loading from "../Loading/Loading";
 import Navbar from "../Navbar/Navbar";
 
-const Products = () => {
+const SubProducts = () => {
   const routeData = useParams().product;
-  // console.log(routeData);
+  const routeSubData = useParams().subcat;
+
+  // console.log(routeData, routeSubData);
   const [apiData, setApiData] = useState();
   useEffect(() => {
     axios(
-      `https://sg-carte-ecommerce-server.onrender.com/api/products/${routeData}`
+      `https://sg-carte-ecommerce-server.onrender.com/api/products/${routeData}/${routeSubData}`
     ).then((data) => {
       setApiData(data.data);
     });
-  }, [routeData]);
+  }, [routeData, routeSubData]);
 
   return (
     <>
       <Navbar />
       {apiData ? (
         <div className="productContainer">
-          <div className="Title">{routeData}</div>
+          <div className="Title">
+            {routeData} &gt; {routeSubData}
+          </div>
           <div>
             <div>
               {apiData &&
@@ -56,4 +60,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default SubProducts;

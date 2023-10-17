@@ -1,15 +1,15 @@
 import React from "react";
 import "./ProductItem.css"; // Create a CSS file for styling
 import { Link } from "react-router-dom";
-import { AiFillStar } from "react-icons/ai";
+// import { AiFillStar } from "react-icons/ai";
 
 const ProductItem = ({
   _id,
   image,
   heading,
   price,
-  ratings,
   cat,
+  percent,
   discount,
 }) => {
   // console.log(_id);
@@ -24,9 +24,14 @@ const ProductItem = ({
           <div className="productPriceCont">
             <div className="product-discount">₹{discount}</div>
             <div className="product-price">₹{price}</div>
-            <div className="product-rating">
-              {ratings} <AiFillStar />
+            <div
+              style={{ color: "green", fontWeight: "600", fontSize: "0.9rem" }}
+            >
+              {percent}%
             </div>
+            {/* <div className="product-rating">
+              {ratings} <AiFillStar />
+            </div> */}
           </div>
         </div>
       </Link>

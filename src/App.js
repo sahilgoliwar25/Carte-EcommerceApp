@@ -11,6 +11,10 @@ import DynamicProd from "./components/Pages/DynamicProduct/DynamicProd";
 import CartPage from "./components/Pages/Cart/CartPage";
 import ScrollToTop from "./components/App/scrollToTop";
 import Error from "./components/Pages/Error/Error";
+import HelpCenter from "./components/Pages/Other/HelpCenter";
+import AboutUs from "./components/Pages/Other/AboutUs";
+import ContactUs from "./components/Pages/Other/ContactUs";
+import SubProducts from "./components/Pages/Products/SubProducts";
 
 function App() {
   return (
@@ -22,9 +26,13 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Register />} />
+          <Route path="/HelpCenter" element={<HelpCenter />} />
+          <Route path="/AboutUs" element={<AboutUs />} />
+          <Route path="/ContactUs" element={<ContactUs />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/:product" element={<Products />} />
-          <Route path="/:product/:Id" element={<DynamicProd />} />
+          <Route path="/:product/:subcat" element={<SubProducts />} />
+          <Route path="/:product/:subcat/:Id" element={<DynamicProd />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="*" element={<Error />} />
         </Routes>

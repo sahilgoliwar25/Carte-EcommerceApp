@@ -14,11 +14,12 @@ const ProdItem = ({
   percent,
   price,
   discount,
+  subcat,
 }) => {
   return (
     <>
       <div className="prodContItem">
-        <Link to={`/${cat}/${id}`}>
+        <Link to={`/${cat}/${subcat}/${id}`}>
           <div className="prodContItemData">
             <div className="prodContItemInfo">
               <div className="prodContItemImage">

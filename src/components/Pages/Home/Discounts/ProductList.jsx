@@ -33,9 +33,13 @@ const ProductList = ({ products }) => {
           </div>
 
           <div className="product-list-wrapper" ref={listRef}>
-            {products.map((product, index) => (
-              <ProductItem key={index} {...product} />
-            ))}
+            {products
+              .filter((item) => item.discount !== "")
+              .slice(0, 12)
+              .reverse()
+              .map((product, index) => (
+                <ProductItem key={index} {...product} />
+              ))}
           </div>
 
           <div

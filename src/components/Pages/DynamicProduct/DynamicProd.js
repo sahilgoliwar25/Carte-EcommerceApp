@@ -12,7 +12,7 @@ const DynamicProd = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const prodId = useParams().Id;
-  console.log(prodId);
+  // console.log(prodId);
   const [apiData, setApiData] = useState();
   useEffect(() => {
     axios("https://sg-carte-ecommerce-server.onrender.com/api/products").then(
@@ -27,9 +27,9 @@ const DynamicProd = () => {
       .filter((item) => item._id === prodId)
       .map((dataprod) => {
         // console.log(dataprod);
-        const { id, image, heading } = dataprod;
+        const { _id, image, heading, discount, price, percent } = dataprod;
         // console.log(id, image, heading);
-        dispatch(AddtoCart({ id, image, heading }));
+        dispatch(AddtoCart({ _id, image, heading, discount, price, percent }));
 
         return null;
       });
@@ -39,9 +39,9 @@ const DynamicProd = () => {
       .filter((item) => item._id === prodId)
       .map((dataprod) => {
         // console.log(dataprod);
-        const { id, image, heading } = dataprod;
+        const { _id, image, heading, discount, price, percent } = dataprod;
         // console.log(id, image, heading);
-        dispatch(AddtoCart({ id, image, heading }));
+        dispatch(AddtoCart({ _id, image, heading, discount, price, percent }));
         navigate("/cart");
         return null;
       });

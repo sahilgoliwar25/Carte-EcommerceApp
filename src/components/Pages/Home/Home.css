@@ -11,8 +11,8 @@
   width: 0;
 }
 .items {
-  min-width: 300px;
-  height: 300px;
+  min-width: 250px;
+  height: 250px;
   text-align: center;
   /* background-color: #ddd; */
   border: 1px solid #a3a3a358;
@@ -20,7 +20,7 @@
   border-radius: 10px;
 }
 .imgCont {
-  height: 80%;
+  height: 70%;
   position: relative;
   margin-bottom: 10px;
 }
@@ -51,6 +51,7 @@
   align-items: center;
   background: url("https://images.unsplash.com/photo-1555529669-26f9d103abdd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
   background-size: cover;
+  margin: 20px 0;
 }
 .quoteBanner::before {
   content: "";
@@ -75,7 +76,8 @@
 .forUserContainer {
 }
 .forUserContents {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
   /* flex-wrap: wrap; */
   gap: 30px;
   align-items: center;
@@ -107,7 +109,7 @@
 /*  */
 .companyPolicyInfo {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   padding: 18px 24px;
 }
 .companyInfo {
@@ -117,8 +119,8 @@
   justify-content: center;
   /* border: 1px solid #000; */
   align-items: center;
-  width: 30%;
-  height: 300px;
+  width: 25%;
+  height: 35vh;
   padding: 10px;
 }
 .companyInfoIcon {

@@ -51,9 +51,9 @@ function Footer() {
         <div>
           <h2>Resources</h2>
           <div className="footer-service-nav">
-            <Link to="/">Help Centre</Link>
-            <Link to="/">About Us</Link>
-            <Link to="/">Contact Us</Link>
+            <Link to="/HelpCenter">Help Centre</Link>
+            <Link to="/AboutUs">About Us</Link>
+            <Link to="/ContactUs">Contact Us</Link>
           </div>
         </div>
         <div className="footer-company-info">
