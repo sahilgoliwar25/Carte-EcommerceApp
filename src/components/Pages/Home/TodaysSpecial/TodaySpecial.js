@@ -19,7 +19,7 @@ const TodaySpecial = ({ products }) => {
               .map((item, index) => {
                 return (
                   <div className="items" key={index}>
-                    <Link to={`/${item.cat}/${item._id}`}>
+                    <Link to={`/${item.cat}/${item.subcat}/${item._id}`}>
                       <div className="imgCont">
                         <img
                           className="image"

@@ -11,11 +11,12 @@ const ProductItem = ({
   cat,
   percent,
   discount,
+  subcat,
 }) => {
   // console.log(_id);
   return (
     <div className="product-item">
-      <Link to={`/${cat}/${_id}`}>
+      <Link to={`/${cat}/${subcat}/${_id}`}>
         <div className="product-image">
           <img src={image} alt={cat} />
         </div>
