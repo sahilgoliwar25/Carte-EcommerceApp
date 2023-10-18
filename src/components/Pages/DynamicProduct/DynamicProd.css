@@ -77,9 +77,7 @@
   color: #11a411;
   font-weight: bold;
 }
-.prodContItemHeading {
-  margin: 10px 0;
-}
+
 .dyProductHighlightsCont {
   margin: 10px 0;
   gap: 10px;
@@ -102,4 +100,41 @@
 }
 .dyProductDesciptionHead {
   font-weight: bold;
+}
+
+@media only screen and (min-device-width: 270px) and (max-device-width: 1200px) {
+  .dyProductCont {
+    grid-template-columns: auto;
+    align-items: center;
+  }
+  .dyProductImgCont {
+    width: 300px;
+    aspect-ratio: 1/1;
+    align-self: center;
+  }
+  .dyProductHead {
+    font-size: 1.4rem;
+  }
+  .dyProductDiscount {
+    font-size: 1.2rem;
+  }
+  .dyProductOriPrice {
+    font-size: 0.9rem;
+  }
+  .dyProductOriDiscountPer {
+    font-size: 0.9rem;
+  }
+}
+@media only screen and (min-device-width: 270px) and (max-device-width: 500px) {
+  .dyProductDiscount {
+    font-size: 0.9rem;
+  }
+  .dyProductOriPrice {
+    font-size: 0.7rem;
+    padding: 3px;
+  }
+  .dyProductOriDiscountPer {
+    font-size: 0.7rem;
+    padding: 3px;
+  }
 }

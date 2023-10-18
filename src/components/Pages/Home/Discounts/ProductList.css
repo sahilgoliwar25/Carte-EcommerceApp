@@ -64,3 +64,12 @@
 .scroll-button.right {
   right: 10px;
 }
+
+@media only screen and (min-device-width: 270px) and (max-device-width: 500px) {
+  .scroll-button {
+    font-size: 16px;
+  }
+  .product-list-wrapper {
+    gap: 10px;
+  }
+}

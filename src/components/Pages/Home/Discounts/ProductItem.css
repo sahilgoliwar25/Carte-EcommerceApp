@@ -66,3 +66,55 @@
   border-radius: 8px;
   font-size: 0.8rem;
 }
+
+@media only screen and (min-device-width: 270px) and (max-device-width: 1200px) {
+  .product-name {
+    font-size: 0.8rem;
+    margin: 0;
+  }
+
+  .product-discount {
+    font-size: 1rem;
+  }
+
+  .product-price {
+    font-size: 0.7rem;
+  }
+
+  .product-rating {
+    gap: 3px;
+    padding: 3px;
+    border-radius: 4px;
+    font-size: 0.6rem;
+  }
+}
+
+@media only screen and (min-device-width: 270px) and (max-device-width: 500px) {
+  .product-item {
+    width: 150px;
+    height: 150px;
+  }
+  .product-name {
+    font-size: 0.4rem;
+    line-height: 5px;
+    margin: 0;
+  }
+
+  .product-discount {
+    font-size: 0.6rem;
+  }
+
+  .product-price {
+    font-size: 0.4rem;
+  }
+
+  .product-rating {
+    gap: 3px;
+    padding: 3px;
+    border-radius: 4px;
+    font-size: 0.4rem;
+  }
+  .productPriceCont {
+    gap: 5px;
+  }
+}

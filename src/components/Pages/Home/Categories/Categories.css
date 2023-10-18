@@ -37,3 +37,16 @@
   text-decoration: none;
   color: black;
 }
+@media only screen and (min-device-width: 270px) and (max-device-width: 1200px) {
+}
+@media only screen and (min-device-width: 270px) and (max-device-width: 500px) {
+  .itemImg {
+    height: 50px;
+    width: 50px;
+    aspect-ratio: 1/1;
+    margin: 5px 0;
+  }
+  .itembox {
+    font-size: 0.6rem;
+  }
+}

@@ -131,12 +131,13 @@ a {
 
 /* -------------Media Query for Mobiles--------------- */
 @media only screen and (min-device-width: 270px) and (max-device-width: 1200px) {
-  .company-logo-comp > a > img {
-    width: 60px;
-    height: 60px;
+  .footer-comp {
+    box-sizing: border-box;
+    font-size: 12px;
+    padding: 10px;
   }
   .footer-nav-logo {
-    display: none;
+    font-size: 30px;
   }
   .footer-comp {
     grid-template-columns: auto;
@@ -147,6 +148,11 @@ a {
   }
   .footer-company-info > h1 {
     font-size: 1.5em;
+  }
+  .company-info-comp,
+  .footer-service-nav,
+  .footer-company-info {
+    gap: 10px;
   }
 }
 @media only screen and (min-device-width: 270px) and (max-device-width: 500px) {

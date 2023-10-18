@@ -67,3 +67,28 @@ hr {
 .prodContItemPrice {
   text-align: right;
 }
+@media only screen and (min-device-width: 270px) and (max-device-width: 1200px) {
+}
+@media only screen and (min-device-width: 270px) and (max-device-width: 500px) {
+  .prodContItem {
+    padding: 2px;
+  }
+  .prodContItemHighlightsCont {
+    display: none;
+  }
+  .prodContItemImage {
+    margin: 2px;
+    height: 80px;
+    width: 80px;
+    aspect-ratio: 1/1;
+  }
+  .prodContItemHeading {
+    font-size: 0.7rem;
+    margin: 5px 0;
+  }
+  .prodContRating {
+    font-size: 0.5rem;
+    border-radius: 4px;
+    padding: 3px;
+  }
+}

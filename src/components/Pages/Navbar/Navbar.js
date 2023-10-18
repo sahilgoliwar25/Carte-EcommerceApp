@@ -4,10 +4,17 @@ import "./Navbar.css";
 import { LuShoppingCart } from "react-icons/lu";
 import { useSelector } from "react-redux";
 import { FaChevronDown } from "react-icons/fa";
+// import { GiHamburgerMenu } from "react-icons/gi";
+
 import { ToastContainer, toast } from "react-toastify";
 
 function Navbar() {
   const data = useSelector((state) => state.Cart.cart);
+  // const [clickNav, setclickNav] = useState(false);
+  // // console.log(data);
+  // const handleNavClick = () => {
+  //   setclickNav(false);
+  // };
 
   const logoutbtn = () => {
     localStorage.removeItem("token");
@@ -37,6 +44,11 @@ function Navbar() {
           type="text"
           placeholder="Search for Products, Brands or More"
         />
+        {/* <div className="nav-dropdown">
+          <button className="dropdown-btn" onClick={() => setclickNav(!data)}>
+            <GiHamburgerMenu />
+          </button>
+        </div> */}
         <div className="userActions">
           <Link className="" to="/cart">
             <div className="cartIcon">
@@ -81,7 +93,7 @@ function Navbar() {
           </NavLink>
           <div class="subnav-content">
             <Link to="/Tablets/OnePlus">OnePlus</Link>
-            <Link to="/Tablets/Redmi">Redmi</Link>
+            <Link to="/Tablets/REDMI">REDMI</Link>
             <Link to="/Tablets/SAMSUNG">SAMSUNG</Link>
             <Link to="/Tablets/APPLE">APPLE</Link>
           </div>
