@@ -165,7 +165,7 @@ const CartPage = () => {
                 </div>
               </div>
               <div className="paymentBtns">
-                <button class="button-5" role="button" onClick={checkOutBtn}>
+                <button class="button-5" onClick={checkOutBtn}>
                   Checkout
                 </button>
               </div>
