@@ -1,4 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { PayPalScriptProvider } from "@paypal/react-paypal-js";
+
 import "./App.css";
 import Footer from "./components/Pages/Footer/Footer";
 import Home from "./components/Pages/Home/Home";
@@ -17,29 +19,39 @@ import ContactUs from "./components/Pages/Other/ContactUs";
 import SubProducts from "./components/Pages/Products/SubProducts";
 
 function App() {
+  const initialOptions = {
+    clientId:
+      "AXjYKIwy9DGKzCjpoGIbQU-fK56bmqmVTy2AY3Dx9ygN0lMCDTCbNTyvK8KqG1jzIPMJXBOeZ0s7jDcG",
+    currency: "USD",
+    intent: "capture",
+  };
   return (
-    <div className="App">
-      <BrowserRouter>
-        <ScrollToTop />
+    <>
+      <PayPalScriptProvider options={initialOptions}>
+        <div className="App">
+          <BrowserRouter>
+            <ScrollToTop />
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Register />} />
-          <Route path="/HelpCenter" element={<HelpCenter />} />
-          <Route path="/AboutUs" element={<AboutUs />} />
-          <Route path="/ContactUs" element={<ContactUs />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/:product" element={<Products />} />
-          <Route path="/:product/:subcat" element={<SubProducts />} />
-          <Route path="/:product/:subcat/:Id" element={<DynamicProd />} />
-          <Route path="/cart" element={<CartPage />} />
-          <Route path="*" element={<Error />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
-      {/* <CartPage /> */}
-    </div>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Register />} />
+              <Route path="/HelpCenter" element={<HelpCenter />} />
+              <Route path="/AboutUs" element={<AboutUs />} />
+              <Route path="/ContactUs" element={<ContactUs />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/:product" element={<Products />} />
+              <Route path="/:product/:subcat" element={<SubProducts />} />
+              <Route path="/:product/:subcat/:Id" element={<DynamicProd />} />
+              <Route path="/cart" element={<CartPage />} />
+              <Route path="*" element={<Error />} />
+            </Routes>
+            <Footer />
+          </BrowserRouter>
+          {/* <CartPage /> */}
+        </div>
+      </PayPalScriptProvider>
+    </>
   );
 }
 

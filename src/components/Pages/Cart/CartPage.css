@@ -1,6 +1,6 @@
 .cartItem {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   gap: 20px;
 }
 .cartItemSubPart {
@@ -10,7 +10,8 @@
   position: relative;
   margin: 15px;
   width: 120px;
-  height: 120px;
+  height: 100px;
+  aspect-ratio: 1/1;
 }
 .cartItemImage img {
   position: absolute;
@@ -102,6 +103,7 @@
 /*  */
 .paymentBtns {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 

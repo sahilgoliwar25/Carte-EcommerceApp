@@ -5,6 +5,7 @@ import Navbar from "../Navbar/Navbar";
 import "./CartPage.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import PayPalApis from "./PaypalApis";
 
 const CartPage = () => {
   const dispatch = useDispatch();
@@ -168,6 +169,13 @@ const CartPage = () => {
                 <button class="button-5" onClick={checkOutBtn}>
                   Checkout
                 </button>
+                <PayPalApis
+                  amount={(
+                    priceDetails.totalOrigPrice -
+                    priceDetails.totalDiscount -
+                    priceDetails.buyMoreSaveMore
+                  ).toLocaleString("en-IN")}
+                />
               </div>
             </div>
           </>
