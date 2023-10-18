@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { RemoveItem } from "../../ReduxCart/CartSlice";
+import { RemoveItem, EmptyCart } from "../../ReduxCart/CartSlice";
 import Navbar from "../Navbar/Navbar";
 import "./CartPage.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const CartPage = () => {
   const dispatch = useDispatch();
@@ -18,9 +20,6 @@ const CartPage = () => {
   useEffect(() => {
     setPriceDetails({
       totalOrigPrice: data.reduce((acc, obj) => {
-        if (obj.discount) {
-          return acc + Number(obj.discount.replaceAll(",", ""));
-        }
         return acc + Number(obj.price.replaceAll(",", ""));
       }, 0),
       totalDiscount: data.reduce((acc, obj) => {
@@ -37,6 +36,12 @@ const CartPage = () => {
     });
   }, [data]);
   console.log(priceDetails);
+  const checkOutBtn = () => {
+    toast.success("Order Placed successfully", {
+      autoClose: 2000,
+    });
+    dispatch(EmptyCart());
+  };
   return (
     <>
       <Navbar />
@@ -88,74 +93,81 @@ const CartPage = () => {
                   })}
               </div>
             </div>
-            <div className="cartItemPriceDetials">
-              <div className="PriceDetailsHead">Price Details</div>
-              <div className="cartItemPriceCalcu">
-                <div className="row">
-                  <div>Price({data.length} item)</div>
-                  <div>
-                    ₹ {priceDetails.totalOrigPrice.toLocaleString("en-IN")}
-                  </div>
-                </div>
-                <div className="row">
-                  <div>Discount</div>
-                  <div className="discountGreen">
-                    - ₹ {priceDetails.totalDiscount.toLocaleString("en-IN")}
-                  </div>
-                </div>
-                <div className="row">
-                  <div>Buy more & save more</div>
-                  <div className="discountGreen">
-                    - ₹ {priceDetails.buyMoreSaveMore.toLocaleString("en-IN")}
-                  </div>
-                </div>
-                <div className="row">
-                  <div>Delivery Charges</div>
-                  <div style={{ display: "flex", gap: "5px" }}>
-                    <div
-                      style={{
-                        textDecoration: "line-through",
-                        fontWeight: "400",
-                        color: "gray",
-                      }}
-                    >
-                      ₹80
-                    </div>
-                    <div className="discountGreen">Free</div>
-                  </div>
-                </div>
-                <div
-                  className="row"
-                  style={{
-                    margin: "20px 0",
-                    fontWeight: "800",
-                    fontSize: "1rem",
-                  }}
-                >
-                  <div>Total Amount</div>
-                  <div>
+            <div>
+              <div className="cartItemPriceDetials">
+                <div className="PriceDetailsHead">Price Details</div>
+                <div className="cartItemPriceCalcu">
+                  <div className="row">
+                    <div>Price({data.length} item)</div>
                     <div>
-                      ₹
-                      {(
-                        priceDetails.totalOrigPrice -
-                        priceDetails.totalDiscount -
-                        priceDetails.buyMoreSaveMore
-                      ).toLocaleString("en-IN")}
+                      ₹ {priceDetails.totalOrigPrice.toLocaleString("en-IN")}
                     </div>
+                  </div>
+                  <div className="row">
+                    <div>Discount</div>
+                    <div className="discountGreen">
+                      - ₹ {priceDetails.totalDiscount.toLocaleString("en-IN")}
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div>Buy more & save more</div>
+                    <div className="discountGreen">
+                      - ₹ {priceDetails.buyMoreSaveMore.toLocaleString("en-IN")}
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div>Delivery Charges</div>
+                    <div style={{ display: "flex", gap: "5px" }}>
+                      <div
+                        style={{
+                          textDecoration: "line-through",
+                          fontWeight: "400",
+                          color: "gray",
+                        }}
+                      >
+                        ₹80
+                      </div>
+                      <div className="discountGreen">Free</div>
+                    </div>
+                  </div>
+                  <div
+                    className="row"
+                    style={{
+                      margin: "20px 0",
+                      fontWeight: "800",
+                      fontSize: "1rem",
+                    }}
+                  >
+                    <div>Total Amount</div>
+                    <div>
+                      <div>
+                        ₹
+                        {(
+                          priceDetails.totalOrigPrice -
+                          priceDetails.totalDiscount -
+                          priceDetails.buyMoreSaveMore
+                        ).toLocaleString("en-IN")}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="row">
+                  <div
+                    className="discountGreen"
+                    style={{ fontSize: "0.9rem", fontWeight: "700" }}
+                  >
+                    You will save ₹
+                    {(
+                      priceDetails.totalDiscount + priceDetails.buyMoreSaveMore
+                    ).toLocaleString("en-IN")}{" "}
+                    on this order
                   </div>
                 </div>
               </div>
-              <div className="row">
-                <div
-                  className="discountGreen"
-                  style={{ fontSize: "0.9rem", fontWeight: "700" }}
-                >
-                  You will save ₹
-                  {(
-                    priceDetails.totalDiscount + priceDetails.buyMoreSaveMore
-                  ).toLocaleString("en-IN")}{" "}
-                  on this order
-                </div>
+              <div className="paymentBtns">
+                <button class="button-5" role="button" onClick={checkOutBtn}>
+                  Checkout
+                </button>
               </div>
             </div>
           </>
@@ -166,6 +178,7 @@ const CartPage = () => {
           </div>
         )}
       </div>
+      <ToastContainer />
     </>
   );
 };
